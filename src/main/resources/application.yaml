@@ -1,11 +1,13 @@
 server:
   port: 8080
-
 spring:
   application:
     name: ead-api-gateway
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true
       routes:
         - id: authuser-service
           uri: lb://EAD-AUTHUSER-SERVICE/
@@ -18,10 +20,9 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: 'http://localhost:8761/eureka'
+      defaultZone: ${URL-EUREKA-SERVER}
+      #defaultZone: 'http://localhost:8761/eureka'
   instance:
-    hostname: localhost
-
-logging:
-  level:
-    root: info
+    prefer-ip-address: true
+    #hostname: ${HOST_NAME}
+    #hostname: localhost
