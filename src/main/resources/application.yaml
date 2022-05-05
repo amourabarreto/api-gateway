@@ -10,8 +10,8 @@ spring:
     config:
       discovery:
         service-id: ead-config-server
-      username: ${USERNAME-CONFIG-SERVER}
-      password: ${PASSWORD-CONFIG-SERVER}
+      username: ${USERNAME_CONFIG_SERVER}
+      password: ${PASSWORD_CONFIG_SERVER}
     gateway:
       discovery:
         locator:
@@ -32,8 +32,8 @@ spring:
 
 ead:
   serviceRegistry:
-    username: ${USERNAME-EUREKA}
-    password: ${PASSWORD-EUREKA}
+    username: ${USERNAME_EUREKA}
+    password: ${PASSWORD_EUREKA}
 
 
 eureka:
